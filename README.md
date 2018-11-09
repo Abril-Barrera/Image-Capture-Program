@@ -12,7 +12,7 @@ Methods:
  + Start
  + Stop 
  
-Feature task:
+Future task:
 
 + Split image in R, G, B channels.
 
