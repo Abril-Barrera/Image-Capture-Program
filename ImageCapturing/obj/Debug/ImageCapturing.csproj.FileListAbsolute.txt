@@ -1,0 +1,13 @@
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\bin\Debug\ImageCapturing.exe
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\bin\Debug\ImageCapturing.pdb
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\bin\Debug\AForge.Video.dll
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\bin\Debug\AForge.dll
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\obj\Debug\ImageCapturing.csprojAssemblyReference.cache
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\obj\Debug\ImageCapturing.Form1.resources
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\obj\Debug\ImageCapturing.Properties.Resources.resources
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\obj\Debug\ImageCapturing.csproj.GenerateResource.cache
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\obj\Debug\ImageCapturing.csproj.CoreCompileInputs.cache
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\obj\Debug\ImageCapturing.csproj.CopyComplete
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\obj\Debug\ImageCapturing.exe
+C:\Users\abril\source\repos\ImageCapturing\ImageCapturing\obj\Debug\ImageCapturing.pdb
