@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using AForge.Video;
+using AForge.Video.DirectShow;
 
-namespace RGB_Splitter
+namespace ImageCapturing
 {
     public partial class Form1 : Form
     {
+        private FilterInfoCollection VideoCaptureDevices;
+        private VideoCaptureDevice FinalVideo;
+        int count = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -18,72 +23,37 @@ namespace RGB_Splitter
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //image path
-            string img = "C:\\Users\\abril\\source\\repos\\RGB Splitter\\image.jpg";
-
-            //read image
-            Bitmap bmp = new Bitmap(img);
-
-            //load original image in picturebox1
-            pictureBox1.Image = Image.FromFile(img);
-
-            //get image dimension
-            int width = bmp.Width;
-            int height = bmp.Height;
-
-            //3 bitmap for red green blue image
-            Bitmap rbmp = new Bitmap(bmp);
-            Bitmap gbmp = new Bitmap(bmp);
-            Bitmap bbmp = new Bitmap(bmp);
-
-            //red green blue image
-            for (int y = 0; y < height; y++)
+            VideoCaptureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo VideoCaptureDevice in VideoCaptureDevices)
             {
-                for (int x = 0; x < width; x++)
-                {
-                    //get pixel value
-                    Color p = bmp.GetPixel(x, y);
-
-                    //extract ARGB value from p
-                    int a = p.A;
-                    int r = p.R;
-                    int g = p.G;
-                    int b = p.B;
-
-                    //set red image pixel
-                    rbmp.SetPixel(x, y, Color.FromArgb(a, r, 0, 0));
-
-                    //set green image pixel
-                    gbmp.SetPixel(x, y, Color.FromArgb(a, 0, g, 0));
-
-                    //set blue image pixel
-                    bbmp.SetPixel(x, y, Color.FromArgb(a, 0, 0, b));
-
-                }
+                comboBox1.Items.Add(VideoCaptureDevice.Name);
             }
-
-            //load red image in picturebox2
-            pictureBox2.Image = rbmp;
-
-            //load green image in picturebox3
-            pictureBox3.Image = gbmp;
-
-            //load blue image in picturebox4
-            pictureBox4.Image = bbmp;
-
-            //write (save) red image
-            rbmp.Save("C:\\Users\\abril\\source\\repos\\RGB Splitter\\Red.png");
-
-            //write(save) green image
-            gbmp.Save("C:\\Users\\abril\\source\\repos\\RGB Splitter\\Green.png");
-
-            //write (save) blue image
-            bbmp.Save("C:\\Users\\abril\\source\\repos\\RGB Splitter\\Blue.png");
+            comboBox1.SelectedIndex = 0;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            FinalVideo = new VideoCaptureDevice(VideoCaptureDevices[comboBox1.SelectedIndex].MonikerString);
+            FinalVideo.NewFrame += new NewFrameEventHandler(FinalVideo_NewFrame);
+            FinalVideo.Start();
+        }
+        void FinalVideo_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            Bitmap video = (Bitmap)eventArgs.Frame.Clone();
+            pictureBox1.Image = video;
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(FinalVideo.IsRunning)
+            {
+                FinalVideo.Stop();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image.Save("C:\\Users\\abril\\Desktop\\Images\\Capture.jpg");
         }
     }
 }
