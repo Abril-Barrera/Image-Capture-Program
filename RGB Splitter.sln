@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageCapturing", "ImageCapturing\ImageCapturing.csproj", "{E98E35E0-E4DD-4C95-85E8-1F9CE44702A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGB Splitter", "RGB Splitter\RGB Splitter.csproj", "{1B0F5486-A6FC-4687-8B45-61B7DFE58F93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E98E35E0-E4DD-4C95-85E8-1F9CE44702A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E98E35E0-E4DD-4C95-85E8-1F9CE44702A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E98E35E0-E4DD-4C95-85E8-1F9CE44702A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E98E35E0-E4DD-4C95-85E8-1F9CE44702A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B0F5486-A6FC-4687-8B45-61B7DFE58F93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0F5486-A6FC-4687-8B45-61B7DFE58F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0F5486-A6FC-4687-8B45-61B7DFE58F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0F5486-A6FC-4687-8B45-61B7DFE58F93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {02A86D6F-2220-4FC8-B6AA-010FC3DE0900}
+		SolutionGuid = {4A69F869-1C54-4640-9574-A319AA0DC331}
 	EndGlobalSection
 EndGlobal
